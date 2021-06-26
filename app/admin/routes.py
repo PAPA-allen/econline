@@ -281,7 +281,6 @@ def search_voter_index(election_id, voter_index):
         voterObj['campus'] = voter.campus
         
         voter_array.append(voterObj)
-        print(voter_array)
         return jsonify({'voter': voter_array})
     else:
         return jsonify({'voter': ['No Voter Info']})
@@ -304,7 +303,6 @@ def search_voter_name(election_id, voter_name):
         voterObj['campus'] = voter.campus
         
         voter_array.append(voterObj)
-        print(voter_array)
         return jsonify({'voter': voter_array})
     else:
         return jsonify({'voter': ['No Voter Info']})
