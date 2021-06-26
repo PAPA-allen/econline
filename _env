@@ -1,0 +1,7 @@
+# environment variables defined inside a .env file
+EC_SECRET_KEY =  'facf980d98edffa2d563e876aba7a646'
+SECURITY_PASSWORD_SALT =  'lalala'
+MAIL_USERNAME = 'bhjcrelections21@gmail.com'
+MAIL_PASSWORD = '12345admin'  
+ADMIN_PASSWORD = 'admin'
+ADMIN_USERNAME = 'admin'

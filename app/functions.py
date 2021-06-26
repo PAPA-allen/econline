@@ -13,7 +13,6 @@ from flask import current_app
 
 
 
-
 @async_call
 def start_end_election():
     elections = Election.query.all()
@@ -59,11 +58,13 @@ def send_mail(to, subject, template):
     
 
 def generate_confirmation_token(email):
+    app = current_app._get_current_object()
     serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
     return serializer.dumps(email, salt=app.config['SECURITY_PASSWORD_SALT'])
 
 
 def confirm_token(token, expiration=864000):
+    app = current_app._get_current_object()
     serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
     try:
         email = serializer.loads(
