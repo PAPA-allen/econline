@@ -19,8 +19,8 @@ class Election(db.Model):
     name = db.Column(db.String(200), nullable=False)
     created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated = db.Column(db.DateTime, onupdate=datetime.utcnow)
-    start_at = db.Column(db.DateTime, nullable=False)
-    end_at = db.Column(db.DateTime, nullable=False)
+    start = db.Column(db.DateTime, nullable=False)
+    stop = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String(20), nullable=False, default="Building")
     votes_number = db.Column(db.Integer, nullable=False, default=0)
     
