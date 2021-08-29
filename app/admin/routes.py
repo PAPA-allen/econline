@@ -36,7 +36,7 @@ def admin_login():
 
 
 @admin.route('/admin/landing', methods=['POST', 'GET'])
-@login_required
+@login_required #decorator design pattern
 def admin_landing():
     election_form = NewElectionForm()
     if request.method == "POST" and election_form.validate_on_submit():

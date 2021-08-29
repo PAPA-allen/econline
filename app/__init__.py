@@ -16,7 +16,7 @@ from .errorhandlers import method_not_allowed
 from .errorhandlers import internal_server_error
 from .errorhandlers import forbidden
 
-
+#application factory design pattern
 def create_app():
     app = Flask(__name__)
     

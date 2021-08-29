@@ -1,4 +1,5 @@
 from flask import render_template
+from enum import Enum
 
 def page_not_found(e):
     return render_template('404.html'), 404
@@ -14,3 +15,19 @@ def internal_server_error(e):
 
 def forbidden(e):
     return render_template('403.html'), 403
+
+
+
+#design pattern for error handlers
+
+AppErrors = {
+"PAGE_NOT_FOUND":404,
+"METHOD_NOT_ALLOWED":405,
+"INTERNAL_SERVER_ERROR":500,
+"FORBIDDEN":403
+}
+def handle_error(e):
+    return render_template(f'{AppErrors[e]}.html'),AppErrors[e]
+
+
+

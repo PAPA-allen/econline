@@ -1,18 +1,20 @@
+import datetime
 import os
+import secrets
 import threading
 import time
-import secrets
-from PIL import Image
-from flask_mail import Message
-from app.extensions import mail,db
-from app.models import Election
-from itsdangerous import URLSafeTimedSerializer
-import datetime
-from app.decorators import async_call
+
 from flask import current_app
+from flask_mail import Message
+from itsdangerous import URLSafeTimedSerializer
+from PIL import Image
+
+from app.decorators import async_call
+from app.extensions import db, mail
+from app.models import Election
 
 
-
+#decorator design pattern
 @async_call
 def start_end_election():
     elections = Election.query.all()
