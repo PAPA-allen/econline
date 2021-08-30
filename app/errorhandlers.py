@@ -18,7 +18,7 @@ def forbidden(e):
 
 
 
-#Proxy data pattern
+#Proxy design pattern
 
 AppErrors = {
 "PAGE_NOT_FOUND":404,
