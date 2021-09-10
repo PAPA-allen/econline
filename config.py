@@ -26,11 +26,18 @@ class DevelopmentConfig(BaseConfig):
     
 class TestingConfig(BaseConfig):
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI =  "sqlite:///testing.db"
+    TESTING = True
+    WTF_CSRF_SECRET_KEY = "testingcsrf123"
+    SECRET_KEY = "testsecretkey"
+    SECRET_PASSWORD_SALT = "papaallen"
+
     
     
 
 class ProductionConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = "production_database_uri"
+    
 
 
 
